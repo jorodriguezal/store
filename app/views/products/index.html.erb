@@ -2,7 +2,7 @@
 
 <div id="products">
 
-<%= link_to "New product", new_product_path %>
+<%= link_to "New product", new_product_path if authenticated? %>
 
   <% @products.each do |product| %>
     <div>

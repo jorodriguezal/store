@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  allow_unauthenticated_access only: %i[ index show ]
   before_action :set_product, only: %i[ show edit update destroy ] # This is a before_action callback that sets the product for the show, edit, and update actions.
 
   def index
