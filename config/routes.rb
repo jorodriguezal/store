@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root "products#index"
   get "up" => "rails/health#show", as: :rails_health_check
-  resources :products # Creates the whole RESTful routes for the products resource. It does the same as the commented lines below.
+  # resources :products # Creates the whole RESTful routes for the products resource. It does the same as the commented lines below.
+  resources :products do
+    resources :subscribers, only: [ :create ] # Nested resource for subscribers under products
+  end
+
   # get "/products", to: "products#index"
   # get "/products/new", to: "products#new"
   # post "/products", to: "products#create"
