@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :subscribers, only: [ :create ] # Nested resource for subscribers under products
   end
 
+  resource :unsubscribe, only: [ :show ]
+
+
   # get "/products", to: "products#index"
   # get "/products/new", to: "products#new"
   # post "/products", to: "products#create"
