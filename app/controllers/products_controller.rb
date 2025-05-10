@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
- 
+
   def edit
   end
 
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-  
+
     def product_params
       params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
     end
